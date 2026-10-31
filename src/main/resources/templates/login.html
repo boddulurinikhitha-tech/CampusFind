@@ -1,0 +1,64 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusFind - Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eff6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 35px;
+            width: 330px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #cbd5e1;
+        }
+        h2 { color: #2563eb; text-align: center; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        p { text-align: center; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Student Login</h2>
+
+    <p class="error" th:text="${error}"></p>
+
+    <form action="/login" method="post">
+        <input type="email" name="email"
+               placeholder="Email Address" required>
+
+        <input type="password" name="password"
+               placeholder="Password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>New student?
+        <a href="/register">Create Account</a>
+    </p>
+</div>
+</body>
+</html>
+```

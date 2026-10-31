@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusFind - Reported Items</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #243b55;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #243b55;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #141e30;
+        }
+
+        .item {
+            background: white;
+            padding: 22px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .item h2 {
+            color: #243b55;
+            margin-top: 0;
+        }
+
+        .item p {
+            line-height: 1.6;
+        }
+
+        .status {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .empty {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>CampusFind</h1>
+
+    <p class="subtitle">
+        Lost and Found Items on Campus
+    </p>
+
+    <div class="top-bar">
+        <h2>Reported Items</h2>
+
+        <a th:href="@{/report-item}" class="btn">
+            + Report New Item
+        </a>
+    </div>
+
+    <div th:if="${#lists.isEmpty(items)}" class="empty">
+        <h2>No Items Found</h2>
+        <p>There are currently no reported items.</p>
+        <a th:href="@{/report-item}" class="btn">
+            Report an Item
+        </a>
+    </div>
+
+    <div th:each="item : ${items}" class="item">
+
+        <h2 th:text="${item['item_name']}">
+            Item Name
+        </h2>
+
+        <p>
+            <strong>Description:</strong>
+            <span th:text="${item['description']}"></span>
+        </p>
+
+        <p>
+            <strong>Category:</strong>
+            <span th:text="${item['category']}"></span>
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            <span th:text="${item['location']}"></span>
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            <span class="status"
+                  th:text="${item['status']}">
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

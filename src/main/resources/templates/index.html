@@ -1,0 +1,250 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind - Lost & Found</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8ff;
+            color: #172554;
+        }
+
+        header {
+            background: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px #dbeafe;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-left: 25px;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 30px;
+        }
+
+        .search {
+            margin: auto;
+            max-width: 550px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .actions {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .actions button {
+            margin: 10px;
+        }
+
+        .section {
+            padding: 40px 7%;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #dbeafe;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1e3a8a;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media(max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .search {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CampusFind</div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="#lost">Lost Items</a>
+        <a href="#found">Found Items</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Find What You've Lost!</h1>
+
+    <p>
+        A smart campus Lost and Found platform.
+        Helping students reconnect with their belongings.
+    </p>
+
+    <div class="search">
+        <input type="text" placeholder="Search for lost or found items...">
+        <button onclick="alert('Search feature coming soon!')">
+            Search
+        </button>
+    </div>
+</section>
+
+<section class="actions">
+    <h2>What would you like to do?</h2>
+
+    <button onclick="alert('Lost item reporting coming soon!')">
+        + Report Lost Item
+    </button>
+
+    <button onclick="alert('Found item reporting coming soon!')">
+        + Report Found Item
+    </button>
+</section>
+
+<section class="section" id="lost">
+    <h2>Lost Items</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>📱 Mobile Phone</h3>
+            <p>Report and search for missing mobile phones.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎒 College Bag</h3>
+            <p>Find missing bags around your campus.</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Books</h3>
+            <p>Search for lost textbooks and notebooks.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="found">
+    <h2>Found Items</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🔑 Keys</h3>
+            <p>Help owners recover their missing keys.</p>
+        </div>
+
+        <div class="card">
+            <h3>👛 Wallet</h3>
+            <p>Report wallets found inside the campus.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎧 Headphones</h3>
+            <p>Reconnect lost belongings with their owners.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <p>© 2026 CampusFind | Campus Lost and Found Portal</p>
+</footer>
+
+</body>
+</html>
+```

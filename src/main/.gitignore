@@ -1,0 +1,12 @@
+# Keep database credentials private
+src/main/resources/application.properties
+
+# Build files
+target/
+
+# Environment files
+.env
+
+# IDE files
+.idea/
+.vscode/

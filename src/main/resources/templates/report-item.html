@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Item - CampusFind</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eff6ff;
+            padding: 30px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        h2 { color: #2563eb; text-align: center; }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Report Lost or Found Item</h2>
+
+    <p class="error" th:text="${error}"></p>
+
+    <form action="/report-item" method="post">
+
+        <input type="text" name="itemName"
+               placeholder="Item Name" required>
+
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option>Electronics</option>
+            <option>Books</option>
+            <option>Bags</option>
+            <option>Accessories</option>
+            <option>Other</option>
+        </select>
+
+        <textarea name="description"
+                  placeholder="Description" required></textarea>
+
+        <input type="text" name="location"
+               placeholder="Location" required>
+
+        <select name="status" required>
+            <option value="">Select Status</option>
+            <option value="LOST">Lost Item</option>
+            <option value="FOUND">Found Item</option>
+        </select>
+
+        <button type="submit">Submit Report</button>
+    </form>
+</div>
+</body>
+</html>
